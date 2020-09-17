@@ -11,6 +11,9 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "start": "babel-node index.js"
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
