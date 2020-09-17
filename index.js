@@ -10,6 +10,13 @@ const handleHome = (req, res) => res.send("Hello from Home!");
 
 const handleProfile = (req, res) => res.send("You are on my profile");
 
+const betweenRoute = (req, res, next) => {
+  console.log("Between!");
+  next();
+};
+
+app.use(betweenRoute);
+
 app.get("/", handleHome);
 
 app.get("/profile", handleProfile);
