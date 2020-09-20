@@ -1,14 +1,15 @@
 import express from "express";
 import routes from "../routes";
+import { join, login, logout } from "../controllers/userController";
+import { home, search } from "../controllers/videoController";
 
 const globalRouter = express.Router();
 
-const globalHomeHandler = (req, res) => res.send("Home");
+globalRouter.get(routes.home, home);
+globalRouter.get(routes.search, search);
 
-globalRouter.get(routes.home, globalHomeHandler);
-globalRouter.get(routes.join, (req, res) => res.send("Home Join"));
-globalRouter.get(routes.login, (req, res) => res.send("Home Login"));
-globalRouter.get(routes.logout, (req, res) => res.send("Home Logout"));
-globalRouter.get(routes.search, (req, res) => res.send("Home Search"));
+globalRouter.get(routes.join, join);
+globalRouter.get(routes.login, login);
+globalRouter.get(routes.logout, logout);
 
 export default globalRouter;
