@@ -3,12 +3,10 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import { userRouter } from "./routers/userRouter";
+import { globalRouter } from "./routers/globalRouter";
 
 const app = express();
-const PORT = 3000;
-
-const handleListening = () =>
-  console.log(`Example app listening at http://localhost:${PORT}`);
 
 const handleHome = (req, res) => res.send("Hello from Home!");
 
@@ -20,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.get("/", handleHome);
+app.use("/", globalRouter);
+app.use("/user", userRouter);
 
-app.get("/profile", handleProfile);
-
-app.listen(PORT, handleListening);
+export default app;
