@@ -7,6 +7,7 @@ block content
     .search__videos
         each video in videos
             +videoBlock({
+                id: video.id,
                 title: video.title,
                 views: video.views,
                 videoFile: video.videoFile
