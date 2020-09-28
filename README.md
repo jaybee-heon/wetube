@@ -14,3 +14,19 @@ Cloning Youtube with Vanilla and NodeJS
 - [ ] Upload Video
 - [ ] Video Detail
 - [ ] Edit Video
+
+## Installation
+
+Install MongoDB
+
+```
+brew tap mongodb/brew
+brew install mongodb-community
+```
+
+Check installation and run MongoDB
+
+```
+brew services list
+brew services run mongodb-community
+```

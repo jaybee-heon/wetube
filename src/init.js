@@ -1,9 +1,9 @@
-import express from "express";
 import app from "./app";
+import "./db";
 
-const PORT = 3000;
+const PORT = 4000;
 
 const handleListening = () =>
-  console.log(`👌listening on http://localhost:${PORT}`);
+  console.log(`✅ listening on http://localhost:${PORT}`);
 
 app.listen(PORT, handleListening);
