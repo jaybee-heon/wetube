@@ -11,10 +11,6 @@ import { localsMiddleware } from "./middlewares";
 
 const app = express();
 
-const handleHome = (req, res) => res.send("Hello from Home!");
-
-const handleProfile = (req, res) => res.send("You are on my profile");
-
 app.use(helmet());
 
 app.use("/uploads", express.static("uploads"));
