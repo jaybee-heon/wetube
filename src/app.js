@@ -17,6 +17,8 @@ const handleProfile = (req, res) => res.send("You are on my profile");
 
 app.use(helmet());
 
+app.use("/uploads", express.static("uploads"));
+
 app.set("view engine", "pug");
 app.set("views", "src/views");
 
