@@ -14,6 +14,7 @@ const app = express();
 app.use(helmet());
 
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 
 app.set("view engine", "pug");
 app.set("views", "src/views");
